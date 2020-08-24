@@ -1,0 +1,14 @@
+1.
+def MyFirstfunciton():
+  print('this is my first function!')
+
+MyFirstfunction() #可以直接调用函数
+
+2.
+括号可以带上参数
+def add(num1,num2):
+  return (num1 +num2)
+
+print(add(5,6))
+
+3.形式参数 parameter
