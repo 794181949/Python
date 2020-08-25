@@ -1,0 +1,10 @@
+key:value
+
+brand = ['lining','nike','adidas']
+slogan = ['possigble','just do it', 'impossible is nothing']
+#字典使用大括号来创建，是映射类型
+dict1 = {'lining':'possigble','nike':'just do it','adidas':'impossible is nothing'}
+print('nike口号是:',dict1['nike'])
+
+dict2 = {1:'one',2:'two',3:'three'}
+dict[2] #'two'
