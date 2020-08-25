@@ -40,6 +40,33 @@ def discount(price,rate):
   return final_price #final_price是局部Local 变量，只能在函数里面生效
 
 old_price = 100
-rate = 0.8 #全局变量可以在函数内部打印使用
+rate = 0.8 #全局变量可以在函数内部打印使用,
+#如果要在函数内部改变全局变量就要用到 global, eg
+global rate
+
 new_price = discounts(100,0.8)
 
+9.内嵌函数
+在def 中的函数中 再def 一个新函数
+def fun1():
+  print('fun1 is using..')
+  def fun2():
+    print('fun2()is using..')
+  fun2()
+10.闭包
+def FunX(x):
+  def FunY(y):
+    return x*y
+  return FunY
+
+eg FunX(8)(5) #用闭包的方法两个括号来得到 40
+
+def Fun1():
+  x = 5
+  def Fun2():
+    nonlocal x #让x成为在内部也是个全局变量，不然只是局部的不能使用外部的x =5
+    x *= x
+    return x
+  return Fun2()
+
+  
