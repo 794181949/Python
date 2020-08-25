@@ -11,4 +11,35 @@ def add(num1,num2):
 
 print(add(5,6))
 
-3.形式参数 parameter
+3.形式参数 parameter eg num1
+ 实参 argument eg代入的数字 5,6
+ 
+4.函数文档 - 看到函数内容： Function.__doc__
+
+5.关键字参数: 
+def Saysome(name, words):
+  print(name + words)
+
+Saysome(words = 'yes', name = 'I')
+
+6.默认参数:
+def Saysome(name = 'I', words = 'yes'):
+  print(name + words)
+ 
+7.收集参数
+def test(*params):
+  print('参数长度:',len(params))
+  print('second parameter:',params[1])
+
+test(1,'jg',2.32,42,3,2) #输入长度和第二个数
+
+8.local and global variable
+
+def discount(price,rate):
+  final_price = price * rate
+  return final_price #final_price是局部Local 变量，只能在函数里面生效
+
+old_price = 100
+rate = 0.8 #全局变量可以在函数内部打印使用
+new_price = discounts(100,0.8)
+
