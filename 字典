@@ -8,3 +8,58 @@ print('nike口号是:',dict1['nike'])
 
 dict2 = {1:'one',2:'two',3:'three'}
 dict[2] #'two'
+
+dict3 = dict((('f',70), ('i',105),('s',115)))
+or
+dict4 = dict(jy='change world',cjk='for man')#这里jy和 cjk不能变成字符串
+
+#替换值
+dict4['cjk']= 'need programe'
+
+#添加内容,会多了一个项
+dict4['ads'] = 'talent need 99% + 1%'
+
+dict1 = {}
+dict.fromkeys((1, 2, 3),'Number') #这个只能设置一个参数
+
+dict1 = dict1.fromkeys(range(32),'good')
+for eachKey in dict1.keys():
+  print(eachKey)
+
+for eachValue in dict1.values():
+  print(eachValue)
+
+for eachItem in dict1.items():
+  print(eachItem)
+  
+#get() 可以获得一个值
+dict.get(32,'no') #如果没有这个值就返回no，有的话就返回value
+
+# in 和 for
+eg 31 in dict1   ;  32 in dict2
+
+#clear
+dict1.clear()
+作用:
+a = {'name':'you'}
+b = a
+a.clear() #这时候a和b都是空字典了
+
+#copy
+
+a = {1:'one,2:'two',3:'three}
+b = a.copy() #浅拷贝是创建一个不同地址的，如果a改变了，b还是不变
+c = a #直接赋值的地址是相同地址
+
+# pop 值， pop item
+a.pop(2)
+a.popitem() #随机弹出一个数据
+
+#setdefault
+
+a.setdefault(4,'four')
+插入一个值，但是顺序是随机的
+
+#update
+b = {'white':dog}
+a.update(b) #可以把b插入到a中
