@@ -1,0 +1,22 @@
+打开模式
+'r' = 以只读方式打开
+'w' = 以写入方式打开，但是会覆盖已经存在的
+'x' = 如果文件已经存在，打开会发生异常
+'a'=以末尾追加写入
+'b' = 二进制打开文件
+'t'=文本打开，默认
+'+' =读写模式可以添加到其他模式
+'U' =通用换行符支持
+
+open( 'file adress')
+
+f.read(size = ?) size代表size个字符，默认是所有
+f.readline
+f.write(str)
+f.writenlines(seq)
+
+f.seek(offset,from)(from = 0起始位置，1当前位置，2文件末尾，偏移offset个字节）
+
+f.tell() 可以找到当前位置
+
+f.close()
