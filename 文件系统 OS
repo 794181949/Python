@@ -72,3 +72,18 @@ os.path.islink() #是否存在快捷方式
 os.path.ismount() #是否是一个挂载点（ABECD盘）
 
 os.path.samefile(1,2) #判断两个1,2路径是否指向同一个文件
+
+
+pickle模块
+import pickle
+my_list = [1234, 3.23,'small', ['another list']]
+pickle_file = open('my_list.pkl','wb')
+pickle.dump(my_list,pickle_file) #把这个my_list内容复制到file里面储存
+pickle_file.close()
+
+#读取方式
+pickle_file = open('my_list.pkl','rb')
+my_list2 = pickle.load(pickle_file) #读取用load
+print(my_list2) 就可以使用输出了
+
+-节省位置，方便翻页，不用显示太多数据在代码中
