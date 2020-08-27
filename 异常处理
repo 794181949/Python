@@ -1,0 +1,45 @@
+file_name = imput('输入需要打开的文件名')
+f = open(file_name)
+print('文件的内容是:')
+for each_line in f:
+  print(each_line)
+#文件不存在就会产生异常
+
+1. assertionerror 断言语句失败
+eg my_list = []
+assert len(my_list) > 0 #就会产生assertionerror
+
+2.attributeError
+使用未知的对象属性
+
+3.indexError 索引超过序列的范围
+my_list = [1,2,3]
+my_list[3] #indexerror
+
+4.KeyError
+my_dict = {'one' :1, 'two' : 2, 'three' :3}
+my_dict['four'] #没有four就会产生错误
+
+因此用
+my_dict.get('four')
+
+5.OSError 操作系统异常
+6.SyntaError 语法错误
+
+7.TypeError 操作系统错误
+
+8.ZeroDivisionError 除数为0
+
+
+处理异常用
+
+try ... except
+
+eg
+try:
+  f = open('Why i am a file.txt')
+  print(f.read())
+  f.close()
+except OSError as reason:
+  print('the file is wrong\nth reason is:' + str(reason))
+
