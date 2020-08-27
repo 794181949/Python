@@ -36,10 +36,30 @@ my_dict.get('four')
 try ... except
 
 eg
-try:
+try: #一旦出现异常，以下的语句就直接会调到except ，中间的不会再执行
+  sum = 1 + '1'
   f = open('Why i am a file.txt')
   print(f.read())
   f.close()
 except OSError as reason:
   print('the file is wrong\nth reason is:' + str(reason))
+except TypeError as reason:
+  print('the type is wrong\nth reason is:' + str(reason))
 
+
+try ..except ... finally语句
+try:
+  f = open('why i am a file.txt')
+  print(f.write('i yes'))
+  sum = 1 + '1'
+except (OSError,TypeError):
+  print('there is wrong')
+finally: #始终会执行关闭文件保证文件try出错之前的内容保存了
+  f.close() 
+  
+
+raise 展示异常
+eg
+raise ZeroDivisionError
+
+raise ZeroDivisionError('除数为0的异常')
