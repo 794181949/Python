@@ -1,0 +1,74 @@
+os模块
+
+import os 
+os.getcwd() #返回工作目录
+
+os.chdir(E:\\) #改变工作目录
+
+os.listdir('E:\\) #列举目录中的文件名
+
+os.mkdir('E\\A\\B') #创建文件目录A，在A里面在创建B
+
+os.makedirs(') #递归创建多层目录
+
+os.remove('E:\\A\\B\\test.txt') #删除文件
+
+os.rmdir('E:\\') #删除单层目录，里面有文件就不能删除，要先删除文件
+
+os.removedirs() #递归删除目录，从子目录到父目录逐渐删除
+
+os.rename(old,new) #重命名old文件
+
+os.system('cmd') #运行系统的shell命令
+
+os.curdir() #指代当前目录('.')
+eg os.listdir(os.curdir)
+
+os.pardir() #指代上一级目录
+
+os.sep() #输出操作系统特定的路径分隔符
+
+os.linesep() #当前平台使用的行终止符
+
+os.name() #指代当前使用的操作系统 (posix,nt,mac)
+
+
+os.path模块：
+
+os.path.basename('E:\\A\\B\\C\\SEXY.txt') #去掉路径返回文件名
+
+os.path.dirname('E:\\A\\B\\C\\SEXY.txt') #去掉文件名返回路径
+
+os.path.join('C:\\','A','B','C') #把路径各部分组合成一个路径名
+
+os.path.split() #分割文件名和路径
+
+os.path.splitext() #分离文件名和，拓展名
+
+os.path.getsize() #文件尺寸和字节
+
+os.pathgetatime() # 返回最近访问的时间，但是得到的是浮点型，需要用别的模块改变
+
+import time
+time.gmtime(os.path.getatime('E:\\test.txt'))
+(localtime)
+
+os.pathgetctime()  #返回创建时间
+
+os.pathgetmtime() #返回最新修改时间
+
+查询方法
+
+os.path.exist() #判断路径是否存在
+
+os.path.isabs() #判断是否为绝对路径 （完整的路径）
+
+os.path.isdir() #判断是否存在目录
+
+os.path.isfile() #是否存在文件
+
+os.path.islink() #是否存在快捷方式
+
+os.path.ismount() #是否是一个挂载点（ABECD盘）
+
+os.path.samefile(1,2) #判断两个1,2路径是否指向同一个文件
