@@ -1,2 +1,15 @@
 丰富的else 语句！
-if ... else
+1. if ... else
+
+2. while .. else
+
+3. try ... except ...else:...
+
+With语句
+f.close 不用使用，可以抽象文件，不需要关闭文件，可以自动考虑
+try:
+  with open('data.txt','w') as f #可以自动关闭文件
+  for each_line in f:
+    print(each_line)
+except OSError as reason:
+  print('it's wrong', + str(reason))
