@@ -1,0 +1,11 @@
+EasyGui的package
+
+import easygui
+简洁的方式:
+1. 
+from easygui import * # 就可以直接使用不需要.
+
+2.建议使用方法: 可以简介调用的时候
+import easygui as g
+g.msgbox('Hi glo')
+
