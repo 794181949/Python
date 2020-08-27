@@ -13,10 +13,60 @@ open( 'file adress')
 f.read(size = ?) size代表size个字符，默认是所有
 f.readline
 f.write(str)
-f.writenlines(seq)
+f.writenlines(seq) 写字符串序列
 
 f.seek(offset,from)(from = 0起始位置，1当前位置，2文件末尾，偏移offset个字节）
 
 f.tell() 可以找到当前位置
 
 f.close()
+
+#提取文件:把a和b说的话单独储存到一个文件中，同时不要a：和b：
+f = open('record.txt')
+
+boy = []
+girl = []
+count = 1
+for each_line in f:
+  if each_line[:6] != '======': #分割字符串
+    (role,line_spoken) = each_line.split(':',1)
+    if role =='a':
+       boy.append(line_spoken)
+    if role == 'b':
+       girl.append(line_spoken)
+  else：
+    file_name_boy = 'boy_' + str(count) + '.txt'
+    file_name_girl = 'girl_' + str(count) + '.txt'
+    
+    boy_file = open(file_name_boy,'w')
+    girl_file = open(file_name_girl,'w')
+    
+    boy_file.writelines(boy)
+    gril_file.writelines(girl)
+    
+    boy_file.close()
+    girl_file.close()
+    
+    (save_file(boy,girl,count)) 
+    
+    boy = []
+    girl =[]
+    count +=1
+
+save_file(boy,gril,count)
+f.close
+
+#改进用函数
+def save_file(boy,girl,count):
+   file_name_boy = 'boy_' + str(count) + '.txt'
+    file_name_girl = 'girl_' + str(count) + '.txt'
+    
+    boy_file = open(file_name_boy,'w')
+    girl_file = open(file_name_girl,'w')
+    
+    boy_file.writelines(boy)
+    gril_file.writelines(girl)
+    
+    boy_file.close()
+    girl_file.close()
+    
