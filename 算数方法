@@ -58,6 +58,7 @@ a + b 就是8
 11 增量赋值运算，就是多一个i， eg __iadd__
 
 12 一元操作符
-__neg
+__neg pos abs__
+__invert__ 按位求反
 
  
