@@ -1,0 +1,61 @@
+1. issubclass(class, classinfo) 判断是否是子类
+
+class A:
+  pass
+
+class B(A):
+  pass
+
+自己可以是自己的子类，就会返回true
+issubclass(B,A) = true
+issubclass(B,B) = true
+issubclass(B, object) = true 
+
+2.isinstance(object, classinfo) 检查是否属于实例对象
+
+b1 = B()
+isinstance(b1,B)
+isinstance(b1,A) 都是true
+isinstance(b1,(A,B))
+
+3.hasattr(obeject,name) 检测对象里面是否有指定属性
+
+class C:
+  def __init__(self, x=0):
+    self.x = x
+
+c1 = C()
+hasattr(c1, 'x') = true ，x一定要有字符串表示
+
+4.getattr(object, name,[,defult]) 判断是否存在
+
+getattr(c1,'x')
+getattr(c1,'y', "number u entered wrong") #不存在就会返回字符串
+
+5.setattr(object, name,value) 判读属性是否存在，不存在就会自动设置一个值
+
+setattr(c1, 'y', ' gg')
+
+6.delattr(object,name) 删除指定属性
+delattr(c1,'y') 
+
+7. property(fget = none, fset = none, fdel = none, doc =none)
+
+class C:
+  def __init__(self,size = 10 ):
+    self.size = size
+  def getSize(self):
+    return self.size
+  def setSize(self, value):
+    self.size = value
+  def delSize(self):
+    del slef.size
+  x = property(getSize, setSize, delSize)
+#第一个获得属性的方法，第二个设置属性的方法，第三个是删除属性的方法
+方便修改，因为用户还是可以用x来调用，而不是改别的
+
+c1 = C()
+
+c1.x  就会产生10
+c1.x = 18 值就变成了18
+del c1.x
