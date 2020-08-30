@@ -27,3 +27,12 @@ class CapStr(str):
 a = CapStr("I love gmm!")  #全部都会变大写
 
 3. __del__(self) 析构作用
+class C:
+  def __del__(self):
+    print("im del, i was used")
+
+c1 = C()
+del c1 #DEL被调用，就会产生print 
+但是
+c2 = c1
+del c2 #这里就不会print
