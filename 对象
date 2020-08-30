@@ -1,1 +1,60 @@
+1.对象是属性加上方法
+eg
+class Turtle: (通常类名以大写字母开头，和函数来区分)
+  def climb(self):
+    print('i want to climb')
+
+调用：
+tt = Turtle:
+tt.climb()
+
+
+2. oo的特征 ：object oriented
+  可以封装：成为一个模块 = 信息屏蔽技术
+  可以继承：子类可以继承父类的特点
+  多态：不同对象对同一个函数有不同反应
+  
+  
+  
+Self 的使用：
+class Ball:
+  def setName(self, name):
+    self.name = name
+  def kick(self):
+    print("my name is %s" % self.name)
+
+a = Ball()
+a.setName('ball A')
+b = Ball()
+b.setName('ball B')
+a.kick() #my name is ball A #如果是b就会是ball B
+
+_init_(self)函数的使用：
+class Ball:
+  def __init__(self,name):
+    self.name = name
+    def kick(self):
+    print("my name is %s" % self.name)
+
+b = Ball('Ball b') #可以构造函数直接输入name在Ball上，而不是新定义一个函数
+b.kick
+
+公有和私有
+class Person:
+  name = "small person"
+
+p = Person()
+p.name #'small person
+
+私有变量只要在函数或者变量名前面加上两个下划线就可以变成私有
+class Person:
+   __name = "small"
+   def getName(self):
+      return self.__name
+ 访问就需要
+    p.getName()
+     或者
+    p.__Person__name
+    
+
 
