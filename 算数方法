@@ -1,0 +1,63 @@
+1. __add__
+
+class New_int(int):
+  def __add__(self,other):
+    return int.__sub__(self,other)
+  def __sub__(self,other):
+    return int.__add__(self,other)
+    
+a = New_int(3) ; b = New_int(5) #需要在这个类里面
+ a + b = -2
+ 
+ class Try_int(int):
+  def _add_(self, other):
+    return int(self) + int(other)
+  def _sub_(self, other):
+    return int(self) - int(other)
+    
+
+2.__mul__ 乘法
+
+3.__truediv__ 真除法
+
+4.__floordiv__ 整除
+
+5.__mod__ 取余数
+
+6.__divmod__ = a//b,a%b
+
+7.__pow__ 幂运算
+
+8.__lshift__ (rshitf) 左右移位
+
+9.__and ,xor , or__
+
+eg
+
+class int(int):
+  def __add__(self, other):
+    return int.__sub__(self,other)
+
+ a = int('5')
+ b = int('3')
+a + b 就会等于2
+
+10 反运算是比 普通的多了一个r
+eg __radd__()
+
+class Nint(int):
+  def __radd__(self, other)
+     return int.__sub__(self, other)
+
+a = Nint(5)
+b = Nint(3)
+a + b 就是8
+1 + b 就是 3 -1 =2 ，因为 1找不就会执行radd
+
+
+11 增量赋值运算，就是多一个i， eg __iadd__
+
+12 一元操作符
+__neg
+
+ 
