@@ -14,3 +14,41 @@ class Pool:
   def print_num(self):  #可以把henxiang
     print("there is %d turtle and %d fish" % (self.turtle.num, self.fish.num))
   
+类，类对象，类的实例化
+
+class C: #类
+  count = 0  #完整的叫类对象
+  
+  a = C() #实例对象
+  b = C()
+  a.count
+  b.count
+  b.count += 10 #生成了新的count来覆盖了 C.count
+  实例属性就覆盖了之前的类属性
+  
+  C.count +=100 #就会改变a.count,但是不改变b.count
+  
+  
+  
+  class D:
+    def x(self):
+      print("x-man")
+c = D()
+c.x() #x-man
+
+c.x = 1 #这时候有新的实例属性，函数c.x()就被覆盖
+- 因此不要试图在一个类里边定义出所有特性和方法，应该用继承和组合来拓展
+用不同词性命名，例如属性名有名字，方法名用动词
+
+绑定：方法需要有实例才能被调用，限制叫做绑定概念
+需要用self
+
+class CC:
+  def setXY(self,x,y):
+    self.x = x
+    self.y = y
+  def printXY(self):
+    print(self.x,self.y)
+
+dd= CC()
+如果CC被删除，还是可以调用dd的实例属性
