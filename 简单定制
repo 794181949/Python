@@ -57,4 +57,4 @@ class MyTimer():
   self.begin = 0 
   self.end = 0
   
-   
+   时间的展示需要修改
