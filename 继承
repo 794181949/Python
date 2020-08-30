@@ -1,0 +1,70 @@
+class DervicedClassName( BaseClassName):
+外面是子类，里面是父类
+eg
+class Parent:
+  def hello(self)
+    print("use the method of parents")
+
+class Child(Parent):
+  pass
+  
+p = Parent()
+p.hello()
+
+c = Child()
+c.hello()
+
+class Child(Parent):
+  def hello(self):
+    print("use the method of child")
+c.hello() #子类就会覆盖掉之前父类的方法
+
+
+eg 定义各种鱼
+import random as r
+
+class Fish:
+  def __init__(self):
+    self.x = r.randint(0,10)
+    self.y = r.randint(0,10)
+    
+  def move(self):
+    self.x -=1
+    print("the position is:"，self.x,self.y)
+
+class Goldfish(Fish):
+  pass
+
+class Carp(Fish):
+  pass
+
+class Shark(Fish):
+  def __init__(self):
+    super().__init__() #可以自动继承父类的方法，不用给定父类的名字
+    self.hungry = True
+  
+  def eat(self):
+    if self.hungry:
+      print("eat everyday")
+      self.hungry = False
+    else:
+      print("im full")
+   
+   
+ 多重继承 （把父类的名字写进去）
+ （不建议使用）
+ class Base1:
+  def foo1(self):
+    print("im foo1 for base1")
+ 
+  class Base2:
+  def foo2(self):
+    print("im foo2 for base2")
+  
+  class C(Base1,Base2):
+    pass
+  
+  c = C()
+  c.foo1()
+  c.foo2()
+ 
