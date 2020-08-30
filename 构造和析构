@@ -1,0 +1,29 @@
+1. __init__(self[,..])
+根据需求
+class Rectangle:
+  def __init__(self, x, y ): #一定是返回一个none值
+    self.x = x #self.x 是类实例化的实例对象的局部变量，x是参数
+    self.y = y
+    
+  def getPeri(self):
+    return(self.x + self.y) * 2
+  
+  def getArea(self):
+    return self.x * self.y
+ 
+
+rect = Rectangle(3, 4)
+rect.getPeri()
+rect.getArea()
+
+2.__new__(cls[,..])
+当继承不可变类型又需要修改的时候
+
+class CapStr(str):
+  def __new__(cls,string): #str 不能改变，就要在new这里直接修改
+    string = string.upper()
+    return str.__new__(cls,string)
+
+a = CapStr("I love gmm!")  #全部都会变大写
+
+3. __del__(self) 析构作用
