@@ -1,0 +1,60 @@
+设计一个计时器：
+1. __str__, __repr__ 可以打印字符串的方法
+
+
+import time as t
+
+class MyTimer():
+#先给值赋值
+  def __init__(self):
+    self.unit = ['year','month','day','hour','min','sec']
+    self.prompt = "time is not started"
+    self.lasted = []
+    self.begin = 0  #start 不能和start方法名字一样
+    self.end = 0
+
+  def __str__(self):
+    return self.prompt
+  
+  __repr__ = __str__
+  
+  #可以添加两个时间的方法
+  def __add__(self, other):
+    propmt = "total time is"
+    result = []
+    for index in range(6):
+      result.append(self.lasted[index] + other.lasted[index])
+      if result[index]:
+        promt += (str(result[index]) + self.unit[index])
+    return promt
+  
+  #开始计时
+  def start(self):
+    self.begin = t.localtime()
+    self.promot = "used stop() first"
+    print("time starts")
+    
+  ＃停止计时
+  def stop(self)
+    if not self.begin:
+      print("used start() first")
+    
+    else:
+      self.end = t.localtime()
+      self._calc()
+      print("time stops")
+  
+  #内部方法计算运行时间
+  def __cal(self):
+    self.lasted = []
+    self.prompt = "total time is:"
+    for index in range(6):
+      self.lasted.append(self.end[index] - self.begin[index])
+      if self.lasted[index]:
+       self.prompt += (str（self.lasted[index]) + self.unit[index])
+    
+  #为下一轮初始化变量
+  self.begin = 0 
+  self.end = 0
+  
+   
