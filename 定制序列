@@ -1,1 +1,33 @@
+协议protocols ：规定哪些方法必须要定义
 
+1.定制仪器不可变的话：只需要定义__len__(), __getitem__()方法
+
+2. 定义的仪器可变的话出了len and getitem 还要
+setitem and delitem的方法
+
+
+   len 是当len（） 调用时候的行为
+   getitem__(self,key) ：获取容器指定元素的行为，self[key]
+   setitem :设置容器指定元素行为, self[key] = value
+   delitem = del self[key]
+   
+  iter = 迭代器
+  reversed = reversed()调用
+  contains = 测试运算符in or not in 的行为
+  
+  
+  eg
+  
+  class Countlist:
+    def __init__(self, *args):
+      self.values = [x for x in args]
+      self.count = {}.fromkeys(range(len(sel.values)),0)
+      #创建一个字典来记录访问次数，从0开始
+     
+     #创建一个不可变的序列
+    def __len__(self):
+       return len(self.values)
+    
+    def __getitem__(self,key):
+      self.count[key] += 1
+      return self.values[key]
