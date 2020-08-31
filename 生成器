@@ -11,3 +11,8 @@ myG = myGen()
 next(myG) #生成器执行 1
 
 next(myG) #2
+
+
+for i in myGem():
+  print(i) #就会都直接展示
+  
