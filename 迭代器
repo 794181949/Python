@@ -1,0 +1,51 @@
+通常使用for
+for i in "good":
+  print(i)
+  
+
+
+links = {'baidu':'www.baidu.com',\
+          'tieba':'www.qq.com'}
+
+for each in links:
+  print("%s -> %s " %(each, links[each]))
+  
+  
+  迭代器: iter(), and next()
+  
+  string = "loveg"
+  it = iter(string)
+  next(it) #就会得到第一个元素，之后会一直往下，知道最后一个
+  
+  while True:
+    try:  
+          each = next(it)
+    except StopIteration:
+          break
+    print(each)
+    
+    
+    
+    
+class Fibs:
+  def __init__(self, n = 20):
+    self.a = 0 
+    self.b = 1
+    self.n = n
+  def __iter__(self): #迭代器的使用
+    return self
+    
+  def __next__(self):
+    self.a, self.b = self.b, self.a + self.b
+    if self.a > self.n:
+      raise TsopIteration
+    return self.a
+    
+fibs = Fibs()
+for each in fibs:
+    print(each)
+    
+fibs = Fibs(100)
+for each in fibs:
+  print(each)
+  
