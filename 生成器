@@ -1,0 +1,13 @@
+生成器 yield:
+协同程序是可以运行独立的函数调用，函数可以暂定或者挂起，
+在需要的时候从程序离开的地方继续或者重新开始
+
+def myGen():
+  print("生成器被执行")
+  yield 1
+  yield 2
+
+myG = myGen()
+next(myG) #生成器执行 1
+
+next(myG) #2
