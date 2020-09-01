@@ -1,0 +1,22 @@
+pypi.python.org/pypi 第三方模块
+还有python 自带标准模块
+
+学一个模块mk
+
+import mk
+mk.__doc__ 
+print(mk.__doc__) #关于模块的内容
+
+知道函数的类和属性
+dir(timeit)
+
+过滤方法:
+timeit.__all__ #可以供外界调用的，不是所用模块都有all这个属性
+只有all里面的属性才能用 from timeit import * 来导入
+
+
+__file__:指明模块源代码的位置
+timeit.__file__
+
+
+help(timeit) 就比doc属性详细一点的介绍
