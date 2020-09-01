@@ -15,4 +15,37 @@ next(myG) #2
 
 for i in myGem():
   print(i) #就会都直接展示
-  
+
+
+FIb 数列
+def libs():
+  a = 0
+  b = 1
+  while True:
+    a,b = b, a+b
+    yield a
+
+for each in libs():
+  if each > 100 #可以让它数字中断
+    break
+  print( each, end = '')
+
+
+列表推导式
+a = [i for i in range(100) if not (i % 2) and i % 3] 得到被2整除不被3整除
+
+字典推导式
+b = {i:i % 2 == 0 for i in range(10)}
+{0: True ..}
+
+集合推导式
+s = {i for i in [1,2,3,4,4,5,5,5,6,71,2,]} 
+s就会抵消掉重复的数字
+
+e = (i for i in range(10)) #生成器推导式
+next(e) 就会逐个出现
+
+for each in e :
+  print(each) #打印剩下的数字
+
+sum(i for i in range(100) if i %2) 就会得到不能被2整除的数字加起来
